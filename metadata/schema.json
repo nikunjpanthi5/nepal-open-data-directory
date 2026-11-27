@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Nepal Open Data Directory dataset record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "category", "publisher", "description", "source_url", "license", "last_verified"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "category": {"type": "string", "enum": ["agriculture", "demographics", "economics", "education", "healthcare", "climate", "disaster-management", "geospatial", "government", "tourism", "ai-ml-nlp"]},
+    "publisher": {"type": "string", "minLength": 1},
+    "description": {"type": "string", "minLength": 1},
+    "geographic_coverage": {"type": "string"},
+    "temporal_coverage": {"type": "string"},
+    "format": {"type": "string"},
+    "source_url": {"type": "string", "format": "uri"},
+    "download_url": {"type": "string", "format": "uri"},
+    "license": {"type": "string", "minLength": 1},
+    "license_url": {"type": "string", "format": "uri"},
+    "last_verified": {"type": "string", "format": "date"},
+    "research_uses": {"type": "array", "items": {"type": "string"}}
+  }
+}
